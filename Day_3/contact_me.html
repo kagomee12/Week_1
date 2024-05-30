@@ -24,26 +24,26 @@
     <div style="width: 100%; height: 720px; display: flex;flex-direction: column;
     align-items: center;">
     <h1 style="text-align: center;">GET IN TOUCH</h1>
-    <form action="" style="display: flex;">
-        <label for="label-contact">Nama</label>
+    <form style="display: flex;">
+        <label for="nama">Nama</label>
         <input type="text" id="nama" class="colorborder" required>
 
-        <label for="label-contact">E-mail</label>
-        <input type="email" id="email" class="colorborder" required>
+        <label for="email">E-mail</label>
+        <input type="email" id="email" required>
 
-        <label for="label-contact">Phone Number</label>
-        <input type="text" id="phonenumber" class="colorborder" required>
+        <label for="phonenumber">Phone Number</label>
+        <input type="text" id="phonenumber" required>
 
-        <label for="label-contact">Subject</label>
-        <select class="input-contact" style="border-radius: 15px;height: 25px;" id="profesi" class="colorborder" required>
+        <label for="profesi">Subject</label>
+        <select class="input-contact" style="border-radius: 15px;height: 25px;" id="profesi" required>
                 <option value="value1"> </option>
                 <option>Frontend Developer</option>
                 <option>Backend Developer</option>
                 <option>Fullstack Developer</option>
         </select>
-        <label for="label-contact">Your Message</label>
+        <label for="isipesan">Your Message</label>
             <textarea class="input-contact" id="isipesan" required></textarea>
-            <span><input type="button" value="submit" class="submit-contact" onclick="submitContact()" id="btnemail" class="colorborder"></span>
+            <span><input type="button" value="submit" class="submit-contact" onclick="submitContact()" id="btnemail"></span>
     </form>
 </div>
 <script src="submissionmail.js"></script>
