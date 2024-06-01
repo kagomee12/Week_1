@@ -126,10 +126,10 @@ function renderProject() {
                       </p>
                       </div>
                       <div class="detail-blog">
-                      ${dataproject[index].nodejs == "true"? '<i class="fa-brands fa-google-play" style= "font-size: 1.2em;"></i>': ""}
-                      ${dataproject[index].reactjs == "true"? '<i class="fa-brands fa-android" style= "font-size: 1.2em;"></i>' : ""}
-                      ${dataproject[index].nextjs == "true"?   '<i class="fa-brands fa-js" style= "font-size: 1.2em;"></i>' : ""}
-                      ${dataproject[index].typescript == "true" ?  '<i class="fa-brands fa-apple" style= "font-size: 1.2em;"></i>' : ""}
+                      ${dataproject[index].nodejs == ""? "" : '<i class="fa-brands fa-google-play" style= "font-size: 1.2em;"></i>'}
+                      ${dataproject[index].reactjs == ""? "" :'<i class="fa-brands fa-android" style= "font-size: 1.2em;"></i>' }
+                      ${dataproject[index].nextjs == ""?  "" :'<i class="fa-brands fa-js" style= "font-size: 1.2em;"></i>' }
+                      ${dataproject[index].typescript == "" ? "" :'<i class="fa-brands fa-apple" style= "font-size: 1.2em;"></i>' }
                       </div>
                       <div class="btn-group">
                           <button class="btnedit"> Edit Blog </button>
