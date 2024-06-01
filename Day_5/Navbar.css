@@ -1,0 +1,302 @@
+html, body {
+    margin: 0;
+    padding: 0%;
+    background-color: rgb(240, 111, 111);
+}
+.navigasi_item, .navigasi_item_1 {
+    text-align: center;
+    text-decoration: none;
+    list-style: none;
+    display: block;
+    font-size: 14pt;
+    padding: 1rem;
+    color: white;
+}
+.zoomin{
+    display: none;
+}
+i:hover{
+    color: gray;
+}
+.navigasi_item_1:hover {
+    color: black;
+    font-size: 150%;
+}
+
+.btncontact {
+    background-color: black; 
+    color: white; 
+    border-radius: 20px;
+    padding: 10px; 
+    text-decoration: none; 
+    width: 120px; 
+    height: max-content; 
+    text-align: center;
+}
+.btncontact:hover {
+    background-color: rgb(214, 214, 214);
+    color: red;
+} 
+form {
+    width: 50%;
+    flex-direction: column;
+    height: 100%;
+}
+label {
+    font-size: 16pt;
+    align-items: center;
+    vertical-align: middle;
+}
+.submit-contact {
+    background-color: orangered;
+    color: white;
+    width: 150px;
+    height: 30px;
+    border-radius: 15px;
+    margin-top: 25px;
+    margin-right: 0;
+    float: right;
+}
+.submit-contact:hover {
+ background-color: rgb(94, 94, 94);
+}
+input {
+border-radius: 10px;
+height: 25px;
+}
+
+textarea.input-contact{
+    resize: none;
+    height: 200px;
+    border-radius: 10px;
+}
+.html .body {
+    margin: 0%;
+    padding: 0%;
+}
+
+.perkenalan {
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    margin-top: 0%;
+
+}
+
+.contact1 .contact2 {
+    background-color: black;
+    border-radius: 20px;
+    padding: 4px;
+    width: 100px;
+    text-decoration: none;
+    justify-content: center;
+    color: white;
+    align-items: center;
+    display: flex;
+}
+
+.contact2:hover {
+    background-color: grey;
+}
+
+button:hover {
+    background-color: gray;
+}
+
+.CV {
+    text-decoration: none;
+    color: black;
+}
+
+.CV:hover {
+    color: grey
+}
+
+.biodata {
+    margin: auto;
+    width: 400;
+    align-items: center;
+    justify-content: left;
+    display: flex;
+}
+
+#nama_hu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    position: relative;
+    padding-top: -50px;
+    align-items: flex-start;
+}
+
+#profesi_hu {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    margin-top: -50px;
+}
+
+#tanda_pengenal {
+    background-color: gainsboro;
+    width: 250px;
+    border: medium;
+    height: max-content;
+}
+
+.titlemyproject {
+    text-align: center;
+    font-size: 20pt;
+}
+
+.containerform{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.containerprojectdata {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    border: 3px ;
+    justify-content: space-around;
+}
+.minicontainerdate {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+}
+
+#description {
+    height: 200px;
+    resize: none;
+    border-radius: 15px;
+}
+
+.checkbox {
+    align-items: start;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin: 5px;
+}
+#nodejs {
+    width: 20px;
+    justify-content: center;
+}
+#nextjs {
+    width: 20px;
+    justify-content: center;
+}
+#reactjs {
+    width: 20px;
+    justify-content: center;
+}
+#typescript {
+    width: 20px;
+    justify-content: center;
+}
+.minicheckbox {
+    justify-content: center;
+    display: flex;
+    gap: 15px;
+}
+
+.minicontaineruploadimage{
+background-color: white; 
+border-radius: 15px;
+padding: 5px 2px;
+align-items: center;
+display: flex;
+width: 99%;
+margin-top: 5px;
+justify-content: space-between;/*untuk masing2 objek dempet kiri kanan margin*/
+}
+#uploadimage {
+    padding: 2px 7px;
+}
+
+.btnproject {
+    margin: auto;
+    width: 150px;
+    height: 35px;
+    border-radius: 15px ;
+}
+
+.borderpost {
+    width: 30%; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: white; 
+    border-radius: 15px;
+    display: inline-block;
+}
+
+.blog-image {
+    width: 100%;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+.jack{
+    width: 50%;
+}
+.gambarblog {
+    text-decoration: none;
+    font-size: 18pt;
+    color: black;
+    font: bold;
+    width: 48%;
+}
+.indeksblog {
+    margin-top: -15px; 
+    font-size: small;
+}
+.isi {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: min-content;
+}
+.detail-blog {
+    display: flex; 
+    width: 100%; 
+    align-items: center; 
+    margin-top: -5px; 
+    gap: 10px;
+}
+.btn-group {
+    display: flex; 
+    justify-content: space-between;
+    text-align: center;
+    margin: auto;
+    justify-content: center;
+}
+.btnedit {
+    width: 48%; 
+    background-color: black; 
+    border-radius: 15px;
+    margin: auto; 
+    color: white;
+    text-align:center ;
+}
+.btnpost {
+    width: 48%; 
+    background-color: black; 
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+}
+
+.infopost {
+    width: 100%;
+    height: max-content;
+}
+.infotime {
+    margin-top: -10px;
+    font-size: small;
+    width: 48%;
+}
