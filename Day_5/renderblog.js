@@ -1,29 +1,11 @@
-function fulltime(tanggal){
-
-    const date = tanggal.getDate();
-    const month = tanggal.getMonth();
-    const year = tanggal.getFullYear();
-    let hours = tanggal.getHours();
-    let minutes = tanggal.getMinutes();
-
-if (hours <= 9) {
-  hours = "0" + hours;
-}
-
-if (minutes <= 9) {
-  minutes = "0" + minutes;
-}
-
-return `${date}/${month}/${year}||${hours}:${minutes}`;
-}
 let dataproject =[];
-function inputblog(event) {
 
-    event.preventDefault();
+function inputblog(event) {
+event.preventDefault();
 
 let projectname = document.getElementById("projectname").value;
-let stardate = document.getElementById("startdate").value;
-let enddate = document.getElementById("enddate").value;
+let startdate = new Date(document.getElementById("startdate").value);
+let enddate = new Date(document.getElementById("enddate").value);
 let description = document.getElementById("description").value;
 let nodejs = document.getElementById("nodejs").value;
 let reactjs = document.getElementById("reactjs").value;
@@ -34,7 +16,7 @@ let uploadimage =document.getElementById("uploadimage").files;
 
 if (projectname == "") {
     alert("nama project tidak boleh kosong")
-} else if (stardate =""){
+} else if (startdate =""){
     alert("start date harus diisi")
 } else if (enddate ==""){
         alert("end date tidak boleh kosong")
@@ -59,9 +41,7 @@ const renderblog = {
 };
 dataproject.push(renderblog);
 console.log("dataArray:", dataproject);
-renderProject()
-
-
+renderProject();
 }
 
 function timeinfo (time) {
@@ -95,34 +75,48 @@ function timeinfo (time) {
       }
   }
 
-  function Durasi(){
-    const firstday = new Date(stardate);
-    const lastday = new Date(enddate);
+  function Duration(postAt, startdate, enddate) {
+    let distanceDuration = new Date(enddate) - new Date(startdate);
+  
+    let yearMonth = 12;
+    let monthWeek = 4;
+    let weekDay = 7;
+    let dayHour = 24;
+    let hourMinute = 60;
+    let minuteSecond = 60;
+    let secondMilisecond = 1000;
+  
+    let oneYear = yearMonth * monthWeek * weekDay * dayHour * hourMinute * minuteSecond * secondMilisecond;
+    let oneMonth = monthWeek * weekDay * dayHour * hourMinute * minuteSecond * secondMilisecond;
+    let oneWeek = weekDay * dayHour * hourMinute * minuteSecond * secondMilisecond;
+    let oneDay = dayHour * hourMinute * minuteSecond * secondMilisecond;
+  
+    let durationYear = Math.floor(distanceDuration / oneYear);
+    let durationMonth = Math.floor(distanceDuration / oneMonth);
+    let durationWeek = Math.floor(distanceDuration / oneWeek);
+    let durationDay = Math.floor(distanceDuration / oneDay);
 
-    const time = Math.abs(lastday - firstday);
-    const timeSeconds = Math.floor(time / 1000);
-    const timeMinutes = Math.floor(time/ 1000 / 60); 
-    const timeHours = Math.floor(time / 1000 / 60 / 60);
-    const timeDay = Math.floor(time / 1000 / 60 / 60 / 24);
-    const timeMounth = Math.floor(time / 1000 / 60 / 60 / 24 / 30);
-
-    if (timeMounth>0) {
-        return `${timeMounth} Mounth Ago`;
-        }else if (timeDay > 0) {
-          return `${timeDay} Day Ago`;
-        } else if (timeHours > 0) {
-          return `${timeHours} Hours Ago`;
-        } else if (timeMinutes > 0) {
-          return `${timeMinutes} Minutes Ago`;
-        } else if (timeSeconds > 0) {
-          return `${timeSeconds} Seconds Ago`;
-        }
+    console.log(durationYear);
+    console.log(durationMonth);
+    console.log(durationWeek);
+    console.log(durationDay);
+  
+    if (durationYear > 0) {
+      return `${durationYear} year`;
+    } else if (durationMonth > 0) {
+      return `${durationMonth} month`;
+    } else if (durationWeek > 0) {
+      return `${durationWeek} week`;
+    } else if (durationDay > 0) {
+      return `${durationDay} day`;
     }
+  }
   
 
 function renderProject() {
     document.getElementById("content").innerHTML = "";
     for (let index = 0; index < dataproject.length; index++) {
+        let stringtimes = Duration(dataproject[index].distanceDuration, dataproject[index].startdate, dataproject[index].enddate)
       document.getElementById("content").innerHTML += `
               <div class="borderpost">
                   <div class="blog-image">
@@ -135,7 +129,7 @@ function renderProject() {
                           <div class="infopost">
                       <div class = "indeksblog">
                             <p>
-                                Durasi: ${Durasi[index].time}
+                                Durasi: ${Duration(dataproject[index].enddate)}
                             </p>
                       </div>
                       <div class = "infotime">
