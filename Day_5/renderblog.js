@@ -7,10 +7,10 @@ let projectname = document.getElementById("projectname").value;
 let startdate = new Date(document.getElementById("startdate").value);
 let enddate = new Date(document.getElementById("enddate").value);
 let description = document.getElementById("description").value;
-let nodejs = document.getElementById("nodejs").value;
-let reactjs = document.getElementById("reactjs").value;
-let nextjs = document.getElementById("nextjs").value;
-let typescript = document.getElementById("typescript").value;
+let nodejs = document.getElementById("nodejs").checked;
+let reactjs = document.getElementById("reactjs").checked;
+let nextjs = document.getElementById("nextjs").checked;
+let typescript = document.getElementById("typescript").checked;
 let uploadimage =document.getElementById("uploadimage").files;
 
 
@@ -24,8 +24,10 @@ if (projectname == "") {
     alert("description tidak boleh kosong")
 } else if (nodejs == "" && reactjs == "" && nextjs == "" && typescript == ""){ 
     alert("silahkan pilih salah satu technologies")
-} else {
-    alert("selamat project anda telah diposting")
+} else if (uploadimage == "") {
+    alert("silahkan masukkan gambar")
+}else{
+    alert("postingan anda sudah dibuat")
 }
 
 inputimage = URL.createObjectURL(uploadimage[0]);
@@ -33,18 +35,21 @@ inputimage = URL.createObjectURL(uploadimage[0]);
 const renderblog = {
     title: projectname,
     body: description,
-    nodejs: nodejs,
-    reactjs: reactjs,
+    nodejs,
+    reactjs,
     image: inputimage,
-    typescript: typescript,
+    typescript,
     postAt: new Date(),
+    startdate,
+    enddate,
 };
 dataproject.push(renderblog);
 console.log("dataArray:", dataproject);
 renderProject();
 }
 
-function timeinfo (time) {
+
+function timeinfo(time) {
     const thistime = new Date().getTime();
     const timeposted= time
   
@@ -75,48 +80,26 @@ function timeinfo (time) {
       }
   }
 
-  function Duration(postAt, startdate, enddate) {
-    let distanceDuration = new Date(enddate) - new Date(startdate);
+  function duration(tanggal) {
   
-    let yearMonth = 12;
-    let monthWeek = 4;
-    let weekDay = 7;
-    let dayHour = 24;
-    let hourMinute = 60;
-    let minuteSecond = 60;
-    let secondMilisecond = 1000;
-  
-    let oneYear = yearMonth * monthWeek * weekDay * dayHour * hourMinute * minuteSecond * secondMilisecond;
-    let oneMonth = monthWeek * weekDay * dayHour * hourMinute * minuteSecond * secondMilisecond;
-    let oneWeek = weekDay * dayHour * hourMinute * minuteSecond * secondMilisecond;
-    let oneDay = dayHour * hourMinute * minuteSecond * secondMilisecond;
-  
-    let durationYear = Math.floor(distanceDuration / oneYear);
-    let durationMonth = Math.floor(distanceDuration / oneMonth);
-    let durationWeek = Math.floor(distanceDuration / oneWeek);
-    let durationDay = Math.floor(distanceDuration / oneDay);
+    const date = tanggal.getDate(startdate);
+    const date2 = tanggal.getDate(enddate);
+    const month = tanggal.getMonth(startdate);
+    const month2 = tanggal.getMonth(enddate);
+    const year = tanggal.getFullYear(startdate);
+    const year2 = tanggal.getFullYear(enddate);
 
-    console.log(durationYear);
-    console.log(durationMonth);
-    console.log(durationWeek);
-    console.log(durationDay);
-  
-    if (durationYear > 0) {
-      return `${durationYear} year`;
-    } else if (durationMonth > 0) {
-      return `${durationMonth} month`;
-    } else if (durationWeek > 0) {
-      return `${durationWeek} week`;
-    } else if (durationDay > 0) {
-      return `${durationDay} day`;
-    }
+    let dateDuration = date2-date  
+    let monthDuration = month2-month  
+    let yearDuration = year2-year 
+    
+    
+    return `${dateDuration} ${monthDuration} ${yearDuration}`;
   }
   
-
 function renderProject() {
     document.getElementById("content").innerHTML = "";
     for (let index = 0; index < dataproject.length; index++) {
-        let stringtimes = Duration(dataproject[index].distanceDuration, dataproject[index].startdate, dataproject[index].enddate)
       document.getElementById("content").innerHTML += `
               <div class="borderpost">
                   <div class="blog-image">
@@ -124,12 +107,11 @@ function renderProject() {
                   </div>
                   <div class="blog-content">
                           <a href="blog-detail.html" target="_black" class="gambarblog">${
-                            dataproject[index].title
-                          }</a>
+                            dataproject[index].title}</a>
                           <div class="infopost">
                       <div class = "indeksblog">
                             <p>
-                                Durasi: ${Duration(dataproject[index].enddate)}
+                                Durasi: ${duration(dataproject[index].enddate)}
                             </p>
                       </div>
                       <div class = "infotime">
@@ -144,10 +126,10 @@ function renderProject() {
                       </p>
                       </div>
                       <div class="detail-blog">
-                      ${dataproject[index].nodejs ? '<i class="fa-brands fa-google-play" style= "font-size: 1.2em;"></i>': ""}
-                      ${dataproject[index].reactjs ? '<i class="fa-brands fa-android" style= "font-size: 1.2em;"></i>' : ""}
-                      ${dataproject[index].nextjs ?   '<i class="fa-brands fa-js" style= "font-size: 1.2em;"></i>' : ""}
-                      ${dataproject[index].typescript ?  '<i class="fa-brands fa-apple" style= "font-size: 1.2em;"></i>' : ""}
+                      ${dataproject[index].nodejs == "true"? '<i class="fa-brands fa-google-play" style= "font-size: 1.2em;"></i>': ""}
+                      ${dataproject[index].reactjs == "true"? '<i class="fa-brands fa-android" style= "font-size: 1.2em;"></i>' : ""}
+                      ${dataproject[index].nextjs == "true"?   '<i class="fa-brands fa-js" style= "font-size: 1.2em;"></i>' : ""}
+                      ${dataproject[index].typescript == "true" ?  '<i class="fa-brands fa-apple" style= "font-size: 1.2em;"></i>' : ""}
                       </div>
                       <div class="btn-group">
                           <button class="btnedit"> Edit Blog </button>
