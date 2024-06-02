@@ -7,18 +7,18 @@
     <title>Document</title>
 </head>
 <body>
-    <nav style="background-color: gray; width: 100%; height: 70px; display: flex; position: sticky; top: 0px;">
-        <div style="display: flex;align-items: center; height: 64px; width: 50%;">
-            <ul style="display: flex; align-items:center; padding-left: 30px;width: 100%;margin: 0%;">
+    <nav>
+        <div class="containernav">
+            <ul class="navitem">
                 <li class="navigasi_item"><img src="./logo/sticker_10.webp"  alt="" height="50px"></li>
-                <li class="navigasi_item"><a href="./Navbar.html" style="text-decoration: none;" class="navigasi_item_1">Home</a>
+                <li class="navigasi_item"><a href="./index.html" style="text-decoration: none;" class="navigasi_item_1">Home</a>
                 </li>
-                <li class="navigasi_item"><a href="" style="text-decoration: none;" class="navigasi_item_1">My
+                <li class="navigasi_item"><a href="./myproject.html" style="text-decoration: none;" class="navigasi_item_1">My
                         Project</a></li>
         </div>
         </ul>
         <div style="display: flex; justify-content: end; width: 50%; align-items: center;">
-            <a href="" class="btncontact" style="background-color: rgb(214, 214, 214); color: red;">Contact Me</a>
+            <a href="contact_me.html" class="btncontact">Contact Me</a>
         </div>
     </nav>
     <div style="width: 100%; height: 720px; display: flex;flex-direction: column;
@@ -28,8 +28,8 @@
         <label for="nama">Nama</label>
         <input type="text" id="nama" class="colorborder" required>
 
-        <label for="email">E-mail</label>
-        <input type="email" id="email" required>
+        <label for="mail">E-mail</label>
+        <input type="email" id="mail" required>
 
         <label for="phonenumber">Phone Number</label>
         <input type="text" id="phonenumber" required>
@@ -46,6 +46,6 @@
             <span><input type="button" value="submit" class="submit-contact" onclick="submitContact()" id="btnemail"></span>
     </form>
 </div>
-<script src="submissionmail.js"></script>
+<script src="./submissionmail.js"></script>
 </body>
 </html>
