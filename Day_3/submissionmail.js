@@ -15,7 +15,6 @@ function submitContact() {
     }else {
         alert("pesan anda sudah terkirim");
         btnemail.type = "submit";
-        a.click()
     }
 
   }
