@@ -1,7 +1,7 @@
 
 function submitContact() {
     let nama = document.getElementById("nama").value;
-    let email = document.getElementById("email").value;
+    let mail = document.getElementById("mail").value;
     let number = document.getElementById("phonenumber").value;
     let profesi = document.getElementById("profesi").value;
     let isipesan = document.getElementById("isipesan").value;
@@ -10,11 +10,10 @@ function submitContact() {
 
     a.href = `mailto:${myEmail}?subject= ${profesi}&body= halo saya ${nama}, ${isipesan}`
 
-    if (nama == "" || email == "" || number == "" || profesi == "value1" || isipesan == "") {
+    if (nama == "" || mail == "" || number == "" || profesi == "value1" || isipesan == "") {
         alert("semua kolom harus diisi");
     }else {
         alert("pesan anda sudah terkirim");
-        btnemail.type = "submit";
         a.click()
     }
 
