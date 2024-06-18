@@ -2,7 +2,7 @@ let dataproject =[];
 function inputblog(event) {
 
     event.preventDefault();
-
+ 
 let projectname = document.getElementById("projectname").value;
 let stardate = document.getElementById("startdate").value;
 let enddate = document.getElementById("enddate").value;

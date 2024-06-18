@@ -12,7 +12,7 @@ function inputblog(event) {
   let nextjs = document.getElementById("nextjs").checked;
   let typescript = document.getElementById("typescript").checked;
   let uploadimage = document.getElementById("uploadimage").files;
-
+ 
   if (projectname == "") {
     alert("nama project tidak boleh kosong");
   } else if (startdate == "") {
